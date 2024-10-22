@@ -19,6 +19,6 @@ jobs:
         git config --global user.name "Vladimir Bolshakov"
         git config --global user.email "andersdeath@yandex.ru"
         git add newfile.txt
-        git commit -m "Add new file via GitHub Actions"
+        git commit -m"Add new file via GitHub Actions"
         git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git
         git push
