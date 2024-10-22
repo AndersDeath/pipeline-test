@@ -1,0 +1,21 @@
+name: Add File to Repository
+on:
+  push:
+    branches:
+      - main
+jobs:
+  add-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Add new file
+      run: |
+        echo "This is a new file" > newfile.txt
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "Vladimir Bolshakov"
+        git config --global user.email "andersdeath@yandex.ru"
+        git add newfile.txt
+        git commit -m "Add new file via GitHub Actions"
+        git push
